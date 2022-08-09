@@ -1,0 +1,102 @@
+nav{
+    background-color: red;
+    height: 80px;
+    width: 100%;
+}
+
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+    
+}
+
+.nav__logo{
+    height: 40px;
+    width: 150px;
+    background-color: red;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+.nav__link{
+    color: #fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.nav__link:hover{
+    background: black;
+    transition: .5s;
+}
+
+.btn__icono{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+img{
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+    width: 100%;
+}
+
+@media (max-width: 952px){
+    .enlace{
+         padding-left: 20px;
+    }
+    .nav__link{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .btn__icono{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .nav__link{
+        font-size: 20px;
+    }
+    .nav__link:hover{
+        background: none;
+        color: yellow;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
