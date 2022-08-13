@@ -1,0 +1,8 @@
+.progress{
+    margin-bottom: 10px;
+}
+
+.progress-bar{
+    background-color: var(--color-base2);
+    color: var(--color-brand);
+}

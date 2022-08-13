@@ -1,0 +1,36 @@
+.btn {
+    padding: 12px 28px;
+    font-weight: 700;
+}
+
+.btn-brand {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-base);
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background-color: var(--color-brand2);
+    color: var(--color-base);
+    border-color: var(--color-brand2);
+}
+
+#contacto .form-control {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+    color: var(--color-body);
+}
+
+#contacto .form-control:focus{
+    border-color: var(--color-brand);
+    box-shadow: none;
+}
+
+#contacto .form-control::placeholder{
+    color: var(--color-body);
+}
+
+#contacto input.form-control{
+    height: 44px;
+}
