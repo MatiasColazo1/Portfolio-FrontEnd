@@ -6,3 +6,7 @@
     background-color: var(--color-base2);
     color: var(--color-brand);
 }
+
+.skill-titulo{
+    margin-bottom: 5px;
+}

@@ -30,3 +30,7 @@
 .card-custom:hover .card-custom-image img{
     transform: scale(1.1);
 }
+
+img{
+    width: 100%;
+}

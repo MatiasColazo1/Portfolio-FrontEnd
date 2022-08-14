@@ -1,0 +1,19 @@
+.social{
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+
+.shadow-effects {
+    transition: all 0.5s;
+}
+
+.shadow-effects:hover {
+    box-shadow: -3px 3px 0 0 var(--color-brand);
+}
+
+img{
+    width: 250px;
+}
