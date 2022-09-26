@@ -5,8 +5,8 @@
     --color-heading: #eef3db;
     --color-base: #033f47;
     --color-base2: #022a30;
-    --color-brand: #e0f780;
-    --color-brand2: #deff58;
+    --color-brand: rgb(8, 232, 240);
+    --color-brand2: #58e6ff;
     --sidbar-width: 240px;
     --font-base: "Bai Jamjuree";
 }
@@ -59,6 +59,7 @@ a:hover {
     box-shadow: -6px 6px 0 0 var(--color-brand);
 }
 
+
 .iconbox {
     width: 60px;
     height: 60px;
@@ -97,7 +98,7 @@ a:hover {
     .navbar {
     min-height: 100vh;
     width: var(--sidbar-width);
-    background: linear-gradient(rgb(3, 63, 71, 0.8), rgb(3, 63, 71, 0.8)), url(./assets/sidebar-img.jpg);
+    background: linear-gradient(rgb(3, 63, 71, 0.8), rgb(3, 63, 71, 0.8)), url(./assets/fondo-tecnologia-onda-abstracta-estructura-conexion-visualizacion-grandes-datos-negocios_371307-39.webp);
     background-size: cover;
     background-position: center;
     }
@@ -110,6 +111,32 @@ a:hover {
     
 }
 
+/**modal**/
+.modal-content{
+    background-color: var(--color-base);
+}
+.btn-nodeco{
+    background-color: var(--color-base);
+    border-color: #fff;
+ }
+ .btn-nodeco{
+    background-color: var(--color-base);
+    color: #fff;
+}
+.btn-nodeco:hover{
+    color: var(--color-brand2);
+}
+
+.btn-nondeco{
+    background-color: var(--color-base);
+    border-color: #fff;
+ }
+.fa-plus{
+    color: #fff;
+}
+.fa-plus:hover{
+    color: var(--color-brand2);
+}
 
 
 

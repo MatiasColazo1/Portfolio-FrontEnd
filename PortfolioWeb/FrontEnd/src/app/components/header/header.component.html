@@ -1,42 +1,13 @@
-<!--ANTERIOR
-<nav class="nav__container">
-    <input type="checkbox" id="check">
-    <label for="check" class="btn__icono"><i class="fas fa-bars"></i></label>
-      <a class="enlace"><img src="../../../assets/APLogo.png" class="nav__logo"></a>
-      <ul class="nav__list ">
-          <li class="nav__item">
-              <a href="#inicio" class="nav__link"><i class="uil uil-estate nav__icon"></i>Inicio</a>
-          </li>
-          <li class="nav__item">
-              <a href="#sobremi" class="nav__link"><i class="uil uil-user nav__icon"></i>Sombre Mí</a>
-          </li>
-          <li class="nav__item">
-              <a href="#habilidades" class="nav__link"><i class="uil uil-file-info-alt nav__icon"></i>Habilidades</a>
-          </li>
-          <li class="nav__item">
-              <a href="#proyectos" class="nav__link"><i class="uil uil-briefcase-alt nav__icon"></i>Proyectos</a>
-          </li>
-          <li class="nav__item">
-              <a href="#contacto" class="nav__link"><i class="uil uil-message nav__icon"></i>Contacto</a>
-          </li>
-      </ul>
-    
-  </nav>
-  <div>
-    <app-banner></app-banner>
-  </div>
--->
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container flex-lg-column">
       <img src="../../../assets/APLogo.png">
-    
-      <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
-        
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand mx-lg-auto mb-lg-4" href="#"></a>
+     
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+        </button>
+     
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
           
@@ -56,15 +27,17 @@
             <a class="nav-link" href="#contacto">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login" *ngIf="!isLogged">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesión</a>
           </li>
           
         </ul>
     
       </div>
-
+  
     
     </div>
   </nav>
  
-

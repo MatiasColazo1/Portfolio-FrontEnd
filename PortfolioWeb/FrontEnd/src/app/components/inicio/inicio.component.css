@@ -5,7 +5,9 @@
     margin-left: 10px;
 }
 
-
+.social:hover{
+    width: 45px;
+}
 .shadow-effects {
     transition: all 0.5s;
 }
@@ -17,3 +19,8 @@
 img{
     width: 250px;
 }
+
+p{
+    margin-bottom: 0px;
+}
+

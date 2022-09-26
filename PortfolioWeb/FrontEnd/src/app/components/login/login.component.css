@@ -11,3 +11,10 @@
     background-color: var(--color-base);
     color: #fff;
 }
+
+.shadow-effect1:hover {
+    box-shadow: 6px 6px 0 0 var(--color-brand);
+}
+.shadow-effect1 {
+    transition: all 0.5s;
+}

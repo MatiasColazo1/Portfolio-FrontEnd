@@ -1,0 +1,139 @@
+<h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Back-End <button *ngIf="isLogged" #modalButton type="button" class="btn-nondeco rounded-4" (click)="openB()"><i class="fas fa-plus" ></i></button></h3>
+    <div class="row gy-4">
+        <div class="col-12" data-aos="fade-up" data-aos-delay="600">
+            <div class="bg-base p-4 rounded-4 shadow-effect">    
+                <div *ngFor="let Back of back">                
+                    <h5>{{Back.nombreB}}
+                        <button *ngIf="isLogged" class="btn-nodeco edit-button rounded-4" (click)="openEditB(Back.id)"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button *ngIf="isLogged" class="btn-nodeco trash-button rounded-4" (click)="openDeleteB(Back.id)"><i class="fa-solid fa-trash"></i></button>
+                    </h5>
+                    <progress max="100" [value]="Back.porcentajeB" class="progres"></progress>
+                           
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<!--Modal Agregar-->
+<div class="modal fade" tabindex="-1" #skillModalB id="skillModalB">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="text-align: center;">
+          <h5 class="modal-tittle" style="color: #FFFFFFE6">Añadir nueva habilidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="color: #FFFF;"></button>
+        </div>
+        <div class="modal-body">
+          <form #addForm novalidate >
+  
+            <select class="form-select" aria-label="Default select example" id="skillOptionB" > 
+              <option selected disabled>Selecciona la habilidad</option> 
+              <option value="0">Java</option>
+              <option value="1">Java (Spring Boot)</option>
+              <option value="2">Python</option>
+              <option value="3">PHP</option>
+              <option value="4">Node</option>
+              <option value="5">MongoDB</option>
+              <option value="6">MySQL</option>
+            </select>
+  
+            <div class="form-group">
+              <label for="progresoVar" class="form-label" style="color: #FFFF; margin-top: 10px;">Progreso</label>
+              <input type="range" class="form-range" min="0" max="100" id="progresoVarB"> 
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="submitB()">Confimar</button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal agregar -->
+
+<!--Modal borrar-->
+<div class="modal fade" tabindex="-1" #deleteHabModalB id="deleteHabModalB">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: white">Eliminar habilidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color: white">¿Está seguro de que desea eliminar esta habilidad?</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="deleteB(valorHabilidadB)"
+            data-bs-dismiss="modal">Confimar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modal borrar-->
+  
+  <!--Modal editar-->
+  <div class="modal fade" tabindex="-1" #skillEditModalB id="skillEditModalB">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="text-align: center;">
+          <h5 class="modal-tittle" style="color: #FFFFFFE6">Editar habilidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="color: #FFFF;"></button>
+        </div>
+        <div class="modal-body">
+          <form #addForm novalidate >
+  
+            <select class="form-select" id="skillEditOptionB" > 
+              <option selected disabled>Selecciona la habilidad</option>
+              <option value="0">Java</option>
+              <option value="1">Java (Spring Boot)</option>
+              <option value="2">Python</option>
+              <option value="3">PHP</option>
+              <option value="4">Node</option>
+              <option value="5">MongoDB</option>
+              <option value="6">MySQL</option>
+            </select>
+  
+            <div class="form-group">
+              <label for="progresoVar" class="form-label" style="color: #FFFF; margin-top: 10px;">Progreso</label>
+              <input type="range" class="form-range" min="0" max="100" id="editProgresoB"> 
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateB(valorHabilidadB)">Confimar</button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal editar -->
+  
+  <!--Modal error-->
+  <div class="modal fade" tabindex="-1" #errorSkillModalB id="errorSkillModalB">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: white">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color: white">No se ha podido guardar la habilidad.</h6>
+          <br>
+          <h6 style="color: rgb(225, 225, 225)"><i>Puede que haya seleccionado una habilidad ya existente o no la haya ingresado.</i></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"
+            data-bs-dismiss="modal">Confimar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modal error-->
+ 
+

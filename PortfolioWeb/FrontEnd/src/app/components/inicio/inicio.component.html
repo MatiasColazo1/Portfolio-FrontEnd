@@ -3,25 +3,111 @@
 <div id="content-wrapper">
 
     <!-- HOME -->
-
     <section id="inicio" class="full-height px-lg-5 ">
 
         <div class="container" >
             <div class="row justify-content-center text-center" >
                 <div class="col-lg-10">
                     <a class="navbar-brand">
-                    <img src="../../../assets/1200px-Breezeicons-actions-22-im-user.svg.png" data-aos="fade-up" class="rounded-circle">
+                    <img [src]="persona.img" data-aos="fade-up" class="rounded-circle">
                     </a>
                     <div>
-                        <a href="https://www.linkedin.com/in/matias-colazo-271927247/" target="_blank"><img src="../../../assets/linkedin.png" class="social rounded-circle shadow-effects" data-aos="fade-up" data-aos-delay="300"></a>
-                        <a href="https://github.com/matiascolazo1" target="_blank"><img src="../../../assets/github.png" class="social rounded-circle shadow-effects" data-aos="fade-up" data-aos-delay="300"></a>
+                        <a [href]="persona.linLink" target="_blank"><img src="../../../assets/linkedin.png" class="social rounded-circle shadow-effects" data-aos="fade-up" data-aos-delay="300"></a>
+                        <a [href]="persona.gitLink" target="_blank"><img src="../../../assets/github.png" class="social rounded-circle shadow-effects" data-aos="fade-up" data-aos-delay="300"></a>
                     </div>
-                    <h1 class="display-4 fw-bold" data-aos="fade-up" data-aos-delay="600">MATÍAS COLAZO</h1>
-                    <p class="lead tw mt-2 mb-4" data-aos="fade-up" data-aos-delay="600"></p>         
+                    <p class="lead tw mt-2 " data-aos="fade-up" data-aos-delay="600"></p>
+                    <h1 class="display-4 fw-bold" data-aos="fade-up" data-aos-delay="600">
+                        {{persona.nombre}} {{persona.apellido}}
+                    </h1>
+                    <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="600">{{persona.titulo}}</p>  <button *ngIf="isLogged" class="btn-nodeco edit-button rounded-4" (click)="openEdit()"><i class="fa-solid fa-pen-to-square"></i></button>         
                 </div>
             </div>
         </div>
 
     </section>
-
     </div>
+    
+
+    
+<!-- Modal editar -->
+<div class="modal fade" tabindex="-1" #editPersModal id="editPersModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="text-align: center;">
+          <h5 class="modal-tittle" style="color: #FFFFFFE6">Editar perfil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="color: #FFFF;"></button>
+        </div>
+        <div class="modal-body">
+          <form #addForm novalidate #f="ngForm">
+  
+            <div class="form-group">
+              <label for="Nombre" style="color: #FFFFFFE6">Nombre*</label>
+              <input type="text" ngModel name="Nombre" class="form-control" id="Nombre" placeholder="Nombre" required
+                maxlength="32" [(ngModel)]="nombre">
+            </div>
+  
+            <div class="form-group">
+              <label for="Apellido" style="color: #FFFFFFE6">Apellido*</label>
+              <input type="text" ngModel name="Apellido" class="form-control" id="Apellido" placeholder="Apellido"
+                required maxlength="32" [(ngModel)]="apellido">
+            </div>
+  
+            <div class="form-group">
+              <label for="img" style="color: #FFFFFFE6">URL de la imagen*</label>
+              <input type="text" ngModel name="img" class="form-control" id="img" placeholder="ejemplo.com.." 
+                maxlength="200" [(ngModel)]="img">
+            </div>
+  
+            <div class="form-group">
+              <label for="titulo" style="color: #FFFFFFE6">Titular*</label>
+              <input type="text" ngModel name="titulo" class="form-control" id="titulo"
+                placeholder="Desarrollador fullstack Jr" required maxlength="50" [(ngModel)]="titulo">
+            </div>
+  
+            <div class="form-group">
+              <label for="gitLink" style="color: #FFFFFFE6">Perfil de GitHub*</label>
+              <input type="text" ngModel name="gitLink" class="form-control" id="gitLink"
+                placeholder="https://github.com/" required maxlength="200" [(ngModel)]="gitLink">
+            </div>
+  
+            <div class="form-group">
+              <label for="linLink" style="color: #FFFFFFE6">Perfil de LinkedIn*</label>
+              <input type="text" ngModel name="linLink" class="form-control" id="linLink"
+                placeholder="https://www.linkedin.com/" required maxlength="200" [(ngModel)]="linLink">
+            </div>
+  
+  
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editar()">Confimar</button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal editar -->
+
+
+  <!--Modal error-->
+<div class="modal fade" tabindex="-1" #errorBannerModal id="errorBannerModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: white">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color: white">No se ha podido guardar la información.</h6>
+          <br>
+          <h6 style="color: rgb(225, 225, 225)"><i>Puede que no haya ingresado los datos obligatorios* requeridos o haya superado el límite permitido de carácteres (200)</i></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"
+            data-bs-dismiss="modal">Confimar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modal error-->

@@ -1,36 +1,48 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BannerComponent } from './components/banner/banner.component';
-import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './service/interceptor-service';
+import { SobremiComponent } from './components/sobre-mi/sobre-mi.component';
+import { SobremiEComponent } from './components/sobremi-e/sobremi-e.component';
+import { SobremiEdComponent } from './components/sobremi-ed/sobremi-ed.component';
+import { HabilidadesBComponent } from './components/habilidades-b/habilidades-b.component';
+import { HabilidadesFComponent } from './components/habilidades-f/habilidades-f.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BannerComponent,
-    SobreMiComponent,
     InicioComponent,
     ContactoComponent,
     HabilidadesComponent,
     ProyectosComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SobremiComponent,
+    SobremiEComponent,
+    SobremiEdComponent,
+    HabilidadesBComponent,
+    HabilidadesFComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
