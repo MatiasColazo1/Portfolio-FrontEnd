@@ -7,7 +7,7 @@ import { Back } from '../model/back';
   providedIn: 'root'
 })
 export class BackService {
-  backURL = 'http://localhost:8080/back/';
+  backURL = 'https://portfolio-matiasb.herokuapp.com/back/';
 
   constructor(private httpClient:HttpClient) { }
 

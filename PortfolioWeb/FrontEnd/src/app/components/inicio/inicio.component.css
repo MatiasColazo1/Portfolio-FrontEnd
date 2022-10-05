@@ -18,8 +18,12 @@
 
 img{
     width: 250px;
+    
 }
 
+.margin{
+    margin-top: 60px;
+}
 p{
     margin-bottom: 0px;
 }

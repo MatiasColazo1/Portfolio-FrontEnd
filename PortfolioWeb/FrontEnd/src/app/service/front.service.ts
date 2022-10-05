@@ -7,7 +7,7 @@ import { Front } from '../model/front';
   providedIn: 'root'
 })
 export class FrontService {
-  froURL = 'http://localhost:8080/front/';
+  froURL = 'https://portfolio-matiasb.herokuapp.com/front/';
 
   constructor(private httpClient:HttpClient) { }
 
